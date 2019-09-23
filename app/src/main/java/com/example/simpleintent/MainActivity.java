@@ -41,12 +41,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(moveIntentData);
                 break;
             case R.id.btnMoveActivityObject:
-                Intent moveIntentObject = new Intent(MainActivity.this
-                        ,MoveWithData.class);
-                moveIntentObject.putExtra(MoveWithData.extraName,"Muhammad Fauzi Arda Saputra");
-                moveIntentObject.putExtra(MoveWithData.extraAge,20);
+                Intent moveIntentObject = new Intent(MainActivity.this,MoveActivityWithObject.class);
+
+                Person person = new Person();
+                person.setName("Muhammad Fauzi Arda Saputra");
+                person.setAge(20);
+                person.setEmail("fauziardasaputra@gmail.com");
+                person.setCity("Payakumbuh");
+
+                moveIntentObject.putExtra(MoveActivityWithObject.extraObject,person);
                 startActivity(moveIntentObject);
                 break;
+
         }
     }
 }

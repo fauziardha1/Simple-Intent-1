@@ -4,41 +4,42 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Person implements Parcelable {
-    private String name;
+    private String name,city,email;
     private int age;
-    private String email;
-    private String city;
+
+    public Person() {
+    }
 
     public String getName() {
         return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getCity() {
-        return city;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     @Override
@@ -49,19 +50,16 @@ public class Person implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(this.name);
-        dest.writeInt(this.age);
-        dest.writeString(this.email);
         dest.writeString(this.city);
-    }
-
-    public Person() {
+        dest.writeString(this.email);
+        dest.writeInt(this.age);
     }
 
     protected Person(Parcel in) {
         this.name = in.readString();
-        this.age = in.readInt();
-        this.email = in.readString();
         this.city = in.readString();
+        this.email = in.readString();
+        this.age = in.readInt();
     }
 
     public static final Parcelable.Creator<Person> CREATOR = new Parcelable.Creator<Person>() {

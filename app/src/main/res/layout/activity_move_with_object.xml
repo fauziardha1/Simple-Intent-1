@@ -4,17 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MoveWithObject">
+    tools:context=".MoveActivityWithObject">
 
     <TextView
         android:id="@+id/tvObjectReceiver"
         android:layout_width="wrap_content"
-        android:textSize="@dimen/semiMediumText"
         android:layout_height="wrap_content"
-        android:text="@string/object_received"
+        android:text="@string/move_with_object"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
