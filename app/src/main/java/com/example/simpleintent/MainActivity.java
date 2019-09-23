@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button btnMoveActivity;
+    private Button btnMoveActivity,btnMoveActivityData,btnMoveActivityObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnMoveActivity = findViewById(R.id.btnMoveActivity);
         btnMoveActivity.setOnClickListener(this);
 
+        btnMoveActivityData = findViewById(R.id.btnMoveActivityData);
+        btnMoveActivityData.setOnClickListener(this);
+
+        btnMoveActivityObject = findViewById(R.id.btnMoveActivityObject);
+        btnMoveActivityObject.setOnClickListener(this);
+
     }
 
     @Override
@@ -26,6 +32,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnMoveActivity:
                 Intent moveIntent = new Intent(MainActivity.this,MoveActivity.class);
                 startActivity(moveIntent);
+                break;
+            case R.id.btnMoveActivityData:
+                Intent moveIntentData = new Intent(MainActivity.this
+                        ,MoveWithData.class);
+                moveIntentData.putExtra(MoveWithData.extraName,"Muhammad Fauzi Arda Saputra");
+                moveIntentData.putExtra(MoveWithData.extraAge,20);
+                startActivity(moveIntentData);
+                break;
+            case R.id.btnMoveActivityObject:
+                Intent moveIntentObject = new Intent(MainActivity.this
+                        ,MoveWithData.class);
+                moveIntentObject.putExtra(MoveWithData.extraName,"Muhammad Fauzi Arda Saputra");
+                moveIntentObject.putExtra(MoveWithData.extraAge,20);
+                startActivity(moveIntentObject);
                 break;
         }
     }
