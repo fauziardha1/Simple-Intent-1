@@ -37,7 +37,7 @@
         android:text="@string/move_with_object" />
 
     <Button
-        android:id="@+id/btn_dial_number"
+        android:id="@+id/btnDialNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/activity_vertical_margin"

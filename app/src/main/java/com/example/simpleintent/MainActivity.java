@@ -2,13 +2,17 @@ package com.example.simpleintent;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button btnMoveActivity,btnMoveActivityData,btnMoveActivityObject,btnDialPhone;;
+
+    private Button btnMoveActivity,btnMoveActivityData,btnMoveActivityObject,btnDialNumber;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +28,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnMoveActivityObject = findViewById(R.id.btnMoveActivityObject);
         btnMoveActivityObject.setOnClickListener(this);
 
-        btnDialPhone = findViewById(R.id.btn_dial_number);
-        btnDialPhone.setOnClickListener(this);
 
+        btnDialNumber = findViewById(R.id.btnDialNumber);
+        btnDialNumber.setOnClickListener(this);
     }
 
     @Override
@@ -54,6 +58,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 moveIntentObject.putExtra(MoveActivityWithObject.extraObject,person);
                 startActivity(moveIntentObject);
+                break;
+            case R.id.btnDialNumber:
+                String number = "082210714854";
+                Intent dialIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+number));
+                startActivity(dialIntent);
+
                 break;
 
         }
