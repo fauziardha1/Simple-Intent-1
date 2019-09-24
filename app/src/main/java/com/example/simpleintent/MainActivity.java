@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button btnMoveActivity,btnMoveActivityData,btnMoveActivityObject;
+    private Button btnMoveActivity,btnMoveActivityData,btnMoveActivityObject,btnDialPhone;;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnMoveActivityObject = findViewById(R.id.btnMoveActivityObject);
         btnMoveActivityObject.setOnClickListener(this);
+
+        btnDialPhone = findViewById(R.id.btn_dial_number);
+        btnDialPhone.setOnClickListener(this);
 
     }
 
